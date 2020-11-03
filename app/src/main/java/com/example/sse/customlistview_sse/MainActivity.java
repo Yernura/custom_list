@@ -1,8 +1,8 @@
 package com.example.sse.customlistview_sse;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -12,10 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
-import android.widget.AdapterView;
 import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
@@ -26,11 +23,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.lang.reflect.Field;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -102,7 +95,42 @@ public class MainActivity extends AppCompatActivity {
              Toast.makeText(getBaseContext(), "Hangup it's a telemarketer.", Toast.LENGTH_LONG).show();
             return true;
         }
-            return super.onOptionsItemSelected(item);  //if none of the above are true, do the default and return a boolean.
+
+        /**
+         *  sort by title
+         */
+        if(id == R.id.menu_sortByTitle){
+
+            Log.i("TAG", "Sort By title clicked");
+        }
+        /**
+         * sort by Rating
+         */
+        if(id == R.id.menu_sortByRating){
+            Log.i("TAG", "SortByratings clicked");
+
+        }
+        /**
+         * Play the audio of this phrase. Download it in
+         * advance to make sure it’s part of your APK.
+         */
+        if(id == R.id.menu_LongAndProsper){
+            Log.i("TAG", "menu_LongAndProsper clicked");
+        }
+        /**
+         * Play the video of this iconic scene. Download it
+         * in advance to make sure it’s part of your APK.
+         */
+        if(id == R.id.menu_kahn){
+            Log.i("TAG", "Kahn clicked");
+            Intent intent = new Intent(MainActivity.this, KahnActivity.class);
+            MainActivity.this.startActivity(intent);
+        }
+
+
+
+
+        return super.onOptionsItemSelected(item);  //if none of the above are true, do the default and return a boolean.
     }
 
     @Override
