@@ -40,5 +40,18 @@
     </item>
 
 
+    <item
+        android:id="@+id/menu_sortByTitle"
+        android:title="Sort By Title" />
+    <item
+        android:id="@+id/menu_sortByRating"
+        android:title="Sort By Rating" />
+    <item
+        android:id="@+id/menu_LongAndProsper"
+        android:title="Live Long and Prosper" />
+    <item
+        android:id="@+id/menu_kahn"
+        android:title="Kahn!!!" />
+
 
 </menu>
